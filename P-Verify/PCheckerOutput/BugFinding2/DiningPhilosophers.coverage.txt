@@ -1,0 +1,63 @@
+Total event coverage: 87.5%
+===========================
+Monitor: DeadlockDetection
+==========================
+Event coverage: 100.0%
+
+	State: Monitoring
+		State event coverage: 100.0%
+		Events received: eForkAcquired, eReleaseFork
+		Previous states: Monitoring
+		Next states: Monitoring
+
+StateMachine: Fork
+==================
+Event coverage: 75.0%
+
+	State: available
+		State event coverage: 50.0%
+		Events received: eAcquireFork
+		Events sent: eForkAcquired
+		Events not covered: eReleaseFork
+		Previous states: taken
+		Next states: taken
+
+	State: taken
+		State event coverage: 100.0%
+		Events received: eAcquireFork, eReleaseFork
+		Events sent: eForkBusy
+		Previous states: available
+		Next states: available
+
+StateMachine: Philosopher
+=========================
+Event coverage: 100.0%
+
+	State: Init
+		State has no expected events, so coverage is 100%
+		Next states: thinking
+
+	State: thinking
+		State event coverage: 100.0%
+		Events received: eForkAcquired, eForkBusy
+		Events sent: eAcquireFork
+		Previous states: Init
+		Next states: eating
+
+	State: eating
+		State has no expected events, so coverage is 100%
+		Events sent: eReleaseFork
+		Previous states: thinking
+		Next states: done
+
+	State: done
+		State has no expected events, so coverage is 100%
+		Previous states: eating
+
+StateMachine: Simulation2
+=========================
+Event coverage: 100.0%
+
+	State: Init
+		State has no expected events, so coverage is 100%
+
