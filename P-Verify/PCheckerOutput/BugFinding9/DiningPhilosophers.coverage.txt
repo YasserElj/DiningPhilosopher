@@ -1,4 +1,4 @@
-Total event coverage: 37.5%
+Total event coverage: 50.0%
 ===========================
 Monitor: DeadlockDetection
 ==========================
@@ -13,7 +13,7 @@ Event coverage: 50.0%
 
 StateMachine: Fork
 ==================
-Event coverage: 25.0%
+Event coverage: 50.0%
 
 	State: available
 		State event coverage: 50.0%
@@ -22,8 +22,10 @@ Event coverage: 25.0%
 		Events not covered: eReleaseFork
 		Next states: taken
 
-	State: taken is uncovered
-		Events not covered: eAcquireFork, eReleaseFork
+	State: taken
+		State event coverage: 50.0%
+		Events received: eAcquireFork
+		Events not covered: eReleaseFork
 		Previous states: available
 
 StateMachine: Philosopher
@@ -47,7 +49,7 @@ Event coverage: 50.0%
 	State: done
 		State has no expected events, so coverage is 100%
 
-StateMachine: Simulation2
+StateMachine: Simulation1
 =========================
 Event coverage: 100.0%
 

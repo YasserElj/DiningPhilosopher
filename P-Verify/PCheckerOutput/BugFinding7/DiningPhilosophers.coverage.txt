@@ -54,7 +54,7 @@ Event coverage: 100.0%
 		State has no expected events, so coverage is 100%
 		Previous states: eating
 
-StateMachine: Simulation2
+StateMachine: Simulation1
 =========================
 Event coverage: 100.0%
 

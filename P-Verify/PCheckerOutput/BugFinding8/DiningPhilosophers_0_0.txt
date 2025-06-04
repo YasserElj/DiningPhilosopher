@@ -6,239 +6,255 @@
 <CreateLog> Fork(2) was created by Simulation2(1).
 <CreateLog> Fork(3) was created by Simulation2(1).
 <CreateLog> Fork(4) was created by Simulation2(1).
+<StateLog> Fork(2) enters state 'available'.
+<StateLog> Fork(4) enters state 'available'.
 <StateLog> Fork(3) enters state 'available'.
 <CreateLog> Fork(5) was created by Simulation2(1).
-<CreateLog> Fork(6) was created by Simulation2(1).
-<StateLog> Fork(4) enters state 'available'.
-<StateLog> Fork(2) enters state 'available'.
-<CreateLog> Philosopher(7) was created by Simulation2(1).
 <StateLog> Fork(5) enters state 'available'.
-<CreateLog> Philosopher(8) was created by Simulation2(1).
+<CreateLog> Fork(6) was created by Simulation2(1).
+<CreateLog> Philosopher(7) was created by Simulation2(1).
 <StateLog> Philosopher(7) enters state 'Init'.
 <GotoLog> Philosopher(7) is transitioning from state 'Init' to state 'PImplementation.Philosopher.thinking'.
 <StateLog> Philosopher(7) exits state 'Init'.
 <StateLog> Philosopher(7) enters state 'thinking'.
 <PrintLog> P0 Thinking
-<StateLog> Fork(6) enters state 'available'.
 <SendLog> 'Philosopher(7)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(6)'.
+<StateLog> Fork(6) enters state 'available'.
+<CreateLog> Philosopher(8) was created by Simulation2(1).
+<DequeueLog> 'Fork(6)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'available'.
+<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'Monitoring'.
+<PrintLog> philosophers: (<Philosopher(7)>)
+<PrintLog> Philosopher 0 acquired fork
+<PrintLog> size: 1
+<CreateLog> Philosopher(9) was created by Simulation2(1).
+<CreateLog> Philosopher(10) was created by Simulation2(1).
+<SendLog> 'Fork(6)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Philosopher(7)'.
+<GotoLog> Fork(6) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
+<StateLog> Fork(6) exits state 'available'.
+<StateLog> Fork(6) enters state 'taken'.
 <StateLog> Philosopher(8) enters state 'Init'.
 <GotoLog> Philosopher(8) is transitioning from state 'Init' to state 'PImplementation.Philosopher.thinking'.
 <StateLog> Philosopher(8) exits state 'Init'.
 <StateLog> Philosopher(8) enters state 'thinking'.
 <PrintLog> P1 Thinking
 <SendLog> 'Philosopher(8)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' to 'Fork(5)'.
-<DequeueLog> 'Fork(5)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'available'.
-<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Fork(5), philo_id:1, >)' in state 'Monitoring'.
-<PrintLog> philosophers: (<Fork(5)>)
-<PrintLog> Philosopher 1 acquired fork
-<PrintLog> size: 1
-<CreateLog> Philosopher(9) was created by Simulation2(1).
-<DequeueLog> 'Fork(6)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'available'.
-<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Fork(6), philo_id:0, >)' in state 'Monitoring'.
-<PrintLog> philosophers: (<Fork(5)>, <Fork(6)>)
-<PrintLog> Philosopher 0 acquired fork
-<PrintLog> size: 2
 <StateLog> Philosopher(9) enters state 'Init'.
 <GotoLog> Philosopher(9) is transitioning from state 'Init' to state 'PImplementation.Philosopher.thinking'.
 <StateLog> Philosopher(9) exits state 'Init'.
 <StateLog> Philosopher(9) enters state 'thinking'.
 <PrintLog> P2 Thinking
-<SendLog> 'Fork(5)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Fork(5), philo_id:1, >)' to 'Philosopher(8)'.
-<GotoLog> Fork(5) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
-<StateLog> Fork(5) exits state 'available'.
-<StateLog> Fork(5) enters state 'taken'.
-<SendLog> 'Philosopher(9)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' to 'Fork(4)'.
-<SendLog> 'Fork(6)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Fork(6), philo_id:0, >)' to 'Philosopher(7)'.
-<GotoLog> Fork(6) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
-<StateLog> Fork(6) exits state 'available'.
-<StateLog> Fork(6) enters state 'taken'.
-<CreateLog> Philosopher(10) was created by Simulation2(1).
-<DequeueLog> 'Fork(4)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'available'.
-<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Fork(4), philo_id:2, >)' in state 'Monitoring'.
-<PrintLog> philosophers: (<Fork(5)>, <Fork(6)>, <Fork(4)>)
-<PrintLog> Philosopher 2 acquired fork
-<PrintLog> size: 3
-<DequeueLog> 'Philosopher(7)' dequeued event 'eForkAcquired with payload (<philosopher:Fork(6), philo_id:0, >)' in state 'thinking'.
-<PrintLog> P0 took left fork
-<DequeueLog> 'Philosopher(8)' dequeued event 'eForkAcquired with payload (<philosopher:Fork(5), philo_id:1, >)' in state 'thinking'.
-<PrintLog> P1 took left fork
-<SendLog> 'Philosopher(8)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' to 'Fork(4)'.
-<SendLog> 'Philosopher(7)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(5)'.
 <StateLog> Philosopher(10) enters state 'Init'.
 <GotoLog> Philosopher(10) is transitioning from state 'Init' to state 'PImplementation.Philosopher.thinking'.
 <StateLog> Philosopher(10) exits state 'Init'.
 <StateLog> Philosopher(10) enters state 'thinking'.
 <PrintLog> P3 Thinking
-<SendLog> 'Fork(4)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Fork(4), philo_id:2, >)' to 'Philosopher(9)'.
-<GotoLog> Fork(4) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
-<StateLog> Fork(4) exits state 'available'.
-<StateLog> Fork(4) enters state 'taken'.
+<DequeueLog> 'Fork(5)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'available'.
+<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'Monitoring'.
+<PrintLog> philosophers: (<Philosopher(7)>, <Philosopher(8)>)
+<PrintLog> Philosopher 1 acquired fork
+<PrintLog> size: 2
+<SendLog> 'Fork(5)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Philosopher(8), philo_id:1, >)' to 'Philosopher(8)'.
+<GotoLog> Fork(5) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
+<StateLog> Fork(5) exits state 'available'.
+<StateLog> Fork(5) enters state 'taken'.
+<DequeueLog> 'Philosopher(7)' dequeued event 'eForkAcquired with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'thinking'.
+<PrintLog> P0 took left fork
+<DequeueLog> 'Philosopher(8)' dequeued event 'eForkAcquired with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'thinking'.
+<PrintLog> P1 took left fork
+<SendLog> 'Philosopher(7)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(5)'.
 <CreateLog> Philosopher(11) was created by Simulation2(1).
-<DequeueLog> 'Philosopher(9)' dequeued event 'eForkAcquired with payload (<philosopher:Fork(4), philo_id:2, >)' in state 'thinking'.
-<PrintLog> P2 took left fork
-<DequeueLog> 'Fork(5)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'taken'.
-<DequeueLog> 'Fork(4)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'taken'.
+<SendLog> 'Philosopher(10)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' to 'Fork(3)'.
+<SendLog> 'Philosopher(8)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' to 'Fork(4)'.
 <StateLog> Philosopher(11) enters state 'Init'.
 <GotoLog> Philosopher(11) is transitioning from state 'Init' to state 'PImplementation.Philosopher.thinking'.
 <StateLog> Philosopher(11) exits state 'Init'.
 <StateLog> Philosopher(11) enters state 'thinking'.
 <PrintLog> P4 Thinking
-<SendLog> 'Philosopher(9)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' to 'Fork(3)'.
-<SendLog> 'Fork(5)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(5), philo_id:0, >)' to 'Philosopher(7)'.
-<DequeueLog> 'Philosopher(7)' dequeued event 'eForkBusy with payload (<fork:Fork(5), philo_id:0, >)' in state 'thinking'.
-<PrintLog> P0 fork busy, retrying...
-<PrintLog> P0 took left fork
-<DequeueLog> 'Fork(3)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'available'.
-<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Fork(3), philo_id:2, >)' in state 'Monitoring'.
-<PrintLog> philosophers: (<Fork(5)>, <Fork(6)>, <Fork(4)>, <Fork(3)>)
-<PrintLog> Philosopher 2 acquired fork
-<PrintLog> size: 4
-<SendLog> 'Philosopher(11)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' to 'Fork(6)'.
-<SendLog> 'Philosopher(7)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(5)'.
-<SendLog> 'Fork(3)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Fork(3), philo_id:2, >)' to 'Philosopher(9)'.
-<GotoLog> Fork(3) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
-<StateLog> Fork(3) exits state 'available'.
-<StateLog> Fork(3) enters state 'taken'.
-<SendLog> 'Fork(4)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(4), philo_id:1, >)' to 'Philosopher(8)'.
-<DequeueLog> 'Philosopher(8)' dequeued event 'eForkBusy with payload (<fork:Fork(4), philo_id:1, >)' in state 'thinking'.
-<PrintLog> P1 fork busy, retrying...
-<PrintLog> P1 took left fork
-<SendLog> 'Philosopher(8)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' to 'Fork(4)'.
-<DequeueLog> 'Fork(5)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'taken'.
-<DequeueLog> 'Fork(4)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'taken'.
-<SendLog> 'Fork(5)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(5), philo_id:0, >)' to 'Philosopher(7)'.
-<SendLog> 'Fork(4)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(4), philo_id:1, >)' to 'Philosopher(8)'.
-<SendLog> 'Philosopher(10)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' to 'Fork(3)'.
-<DequeueLog> 'Fork(3)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'taken'.
-<DequeueLog> 'Philosopher(9)' dequeued event 'eForkAcquired with payload (<philosopher:Fork(3), philo_id:2, >)' in state 'thinking'.
-<PrintLog> P2 took both forks
-<GotoLog> Philosopher(9) is transitioning from state 'thinking' to state 'PImplementation.Philosopher.eating'.
-<StateLog> Philosopher(9) exits state 'thinking'.
-<StateLog> Philosopher(9) enters state 'eating'.
-<PrintLog> P2 Eating
-<MonitorLog> DeadlockDetection is processing event 'eReleaseFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'Monitoring'.
-<SendLog> 'Fork(3)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(3), philo_id:3, >)' to 'Philosopher(10)'.
-<DequeueLog> 'Philosopher(7)' dequeued event 'eForkBusy with payload (<fork:Fork(5), philo_id:0, >)' in state 'thinking'.
-<PrintLog> P0 fork busy, retrying...
-<PrintLog> P0 took left fork
-<SendLog> 'Philosopher(7)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(5)'.
-<DequeueLog> 'Philosopher(8)' dequeued event 'eForkBusy with payload (<fork:Fork(4), philo_id:1, >)' in state 'thinking'.
-<PrintLog> P1 fork busy, retrying...
-<PrintLog> P1 took left fork
-<DequeueLog> 'Philosopher(10)' dequeued event 'eForkBusy with payload (<fork:Fork(3), philo_id:3, >)' in state 'thinking'.
-<PrintLog> P3 fork busy, retrying...
-<PrintLog> P3 took left fork
-<SendLog> 'Philosopher(8)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' to 'Fork(4)'.
-<SendLog> 'Philosopher(9)' in state 'eating' sent event 'eReleaseFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' to 'Fork(4)'.
-<MonitorLog> DeadlockDetection is processing event 'eReleaseFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'Monitoring'.
-<DequeueLog> 'Fork(6)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'taken'.
-<SendLog> 'Philosopher(10)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' to 'Fork(3)'.
-<DequeueLog> 'Fork(5)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'taken'.
-<DequeueLog> 'Fork(4)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'taken'.
-<SendLog> 'Philosopher(9)' in state 'eating' sent event 'eReleaseFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' to 'Fork(3)'.
-<PrintLog> P2 Done Eating
-<GotoLog> Philosopher(9) is transitioning from state 'eating' to state 'PImplementation.Philosopher.done'.
-<StateLog> Philosopher(9) exits state 'eating'.
-<StateLog> Philosopher(9) enters state 'done'.
-<PrintLog> P2 killed
-<SendLog> 'Fork(6)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(6), philo_id:4, >)' to 'Philosopher(11)'.
-<DequeueLog> 'Philosopher(11)' dequeued event 'eForkBusy with payload (<fork:Fork(6), philo_id:4, >)' in state 'thinking'.
-<PrintLog> P4 fork busy, retrying...
-<PrintLog> P4 took right fork
-<DequeueLog> 'Fork(3)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'taken'.
-<SendLog> 'Fork(4)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(4), philo_id:1, >)' to 'Philosopher(8)'.
-<SendLog> 'Philosopher(11)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' to 'Fork(6)'.
-<SendLog> 'Fork(5)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(5), philo_id:0, >)' to 'Philosopher(7)'.
-<DequeueLog> 'Philosopher(8)' dequeued event 'eForkBusy with payload (<fork:Fork(4), philo_id:1, >)' in state 'thinking'.
-<PrintLog> P1 fork busy, retrying...
-<PrintLog> P1 took left fork
-<DequeueLog> 'Fork(6)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'taken'.
-<SendLog> 'Fork(6)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(6), philo_id:4, >)' to 'Philosopher(11)'.
-<DequeueLog> 'Philosopher(11)' dequeued event 'eForkBusy with payload (<fork:Fork(6), philo_id:4, >)' in state 'thinking'.
-<PrintLog> P4 fork busy, retrying...
-<PrintLog> P4 took right fork
-<DequeueLog> 'Philosopher(7)' dequeued event 'eForkBusy with payload (<fork:Fork(5), philo_id:0, >)' in state 'thinking'.
-<PrintLog> P0 fork busy, retrying...
-<PrintLog> P0 took left fork
-<SendLog> 'Philosopher(11)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' to 'Fork(6)'.
-<DequeueLog> 'Fork(6)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'taken'.
-<SendLog> 'Philosopher(7)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(5)'.
-<SendLog> 'Fork(6)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(6), philo_id:4, >)' to 'Philosopher(11)'.
-<SendLog> 'Fork(3)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(3), philo_id:3, >)' to 'Philosopher(10)'.
-<DequeueLog> 'Fork(5)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'taken'.
-<SendLog> 'Fork(5)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(5), philo_id:0, >)' to 'Philosopher(7)'.
-<SendLog> 'Philosopher(8)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' to 'Fork(4)'.
-<DequeueLog> 'Fork(3)' dequeued event 'eReleaseFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'taken'.
-<GotoLog> Fork(3) is transitioning from state 'taken' to state 'PImplementation.Fork.available'.
-<StateLog> Fork(3) exits state 'taken'.
-<StateLog> Fork(3) enters state 'available'.
-<DequeueLog> 'Philosopher(7)' dequeued event 'eForkBusy with payload (<fork:Fork(5), philo_id:0, >)' in state 'thinking'.
-<PrintLog> P0 fork busy, retrying...
-<PrintLog> P0 took left fork
-<DequeueLog> 'Fork(4)' dequeued event 'eReleaseFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'taken'.
-<GotoLog> Fork(4) is transitioning from state 'taken' to state 'PImplementation.Fork.available'.
-<StateLog> Fork(4) exits state 'taken'.
-<StateLog> Fork(4) enters state 'available'.
-<DequeueLog> 'Philosopher(10)' dequeued event 'eForkBusy with payload (<fork:Fork(3), philo_id:3, >)' in state 'thinking'.
-<PrintLog> P3 fork busy, retrying...
-<PrintLog> P3 took left fork
-<DequeueLog> 'Fork(4)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'available'.
-<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Fork(4), philo_id:1, >)' in state 'Monitoring'.
-<PrintLog> philosophers: (<Fork(5)>, <Fork(6)>, <Fork(4)>, <Fork(3)>)
-<PrintLog> Philosopher 1 acquired fork
-<PrintLog> size: 4
-<DequeueLog> 'Philosopher(11)' dequeued event 'eForkBusy with payload (<fork:Fork(6), philo_id:4, >)' in state 'thinking'.
-<PrintLog> P4 fork busy, retrying...
-<PrintLog> P4 took right fork
-<SendLog> 'Philosopher(7)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(5)'.
-<SendLog> 'Philosopher(10)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' to 'Fork(3)'.
 <DequeueLog> 'Fork(3)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'available'.
-<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Fork(3), philo_id:3, >)' in state 'Monitoring'.
-<PrintLog> philosophers: (<Fork(5)>, <Fork(6)>, <Fork(4)>, <Fork(3)>)
+<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'Monitoring'.
+<PrintLog> philosophers: (<Philosopher(7)>, <Philosopher(8)>, <Philosopher(10)>)
 <PrintLog> Philosopher 3 acquired fork
-<PrintLog> size: 4
+<PrintLog> size: 3
+<DequeueLog> 'Fork(4)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'available'.
+<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'Monitoring'.
+<PrintLog> philosophers: (<Philosopher(7)>, <Philosopher(8)>, <Philosopher(10)>)
+<PrintLog> Philosopher 1 acquired fork
+<PrintLog> size: 3
 <SendLog> 'Philosopher(11)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' to 'Fork(6)'.
-<DequeueLog> 'Fork(5)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'taken'.
-<DequeueLog> 'Fork(6)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'taken'.
-<SendLog> 'Fork(3)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Fork(3), philo_id:3, >)' to 'Philosopher(10)'.
+<SendLog> 'Fork(3)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Philosopher(10), philo_id:3, >)' to 'Philosopher(10)'.
 <GotoLog> Fork(3) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
 <StateLog> Fork(3) exits state 'available'.
 <StateLog> Fork(3) enters state 'taken'.
-<SendLog> 'Fork(6)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(6), philo_id:4, >)' to 'Philosopher(11)'.
-<SendLog> 'Fork(4)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Fork(4), philo_id:1, >)' to 'Philosopher(8)'.
+<DequeueLog> 'Philosopher(10)' dequeued event 'eForkAcquired with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'thinking'.
+<PrintLog> P3 took left fork
+<SendLog> 'Philosopher(9)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' to 'Fork(4)'.
+<SendLog> 'Fork(4)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Philosopher(8), philo_id:1, >)' to 'Philosopher(8)'.
 <GotoLog> Fork(4) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
 <StateLog> Fork(4) exits state 'available'.
 <StateLog> Fork(4) enters state 'taken'.
-<DequeueLog> 'Philosopher(10)' dequeued event 'eForkAcquired with payload (<philosopher:Fork(3), philo_id:3, >)' in state 'thinking'.
-<PrintLog> P3 took left fork
-<SendLog> 'Philosopher(10)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' to 'Fork(2)'.
-<SendLog> 'Fork(5)' in state 'taken' sent event 'eForkBusy with payload (<fork:Fork(5), philo_id:0, >)' to 'Philosopher(7)'.
-<DequeueLog> 'Philosopher(8)' dequeued event 'eForkAcquired with payload (<philosopher:Fork(4), philo_id:1, >)' in state 'thinking'.
+<DequeueLog> 'Philosopher(8)' dequeued event 'eForkAcquired with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'thinking'.
 <PrintLog> P1 took both forks
 <GotoLog> Philosopher(8) is transitioning from state 'thinking' to state 'PImplementation.Philosopher.eating'.
 <StateLog> Philosopher(8) exits state 'thinking'.
 <StateLog> Philosopher(8) enters state 'eating'.
 <PrintLog> P1 Eating
 <MonitorLog> DeadlockDetection is processing event 'eReleaseFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'Monitoring'.
-<DequeueLog> 'Philosopher(7)' dequeued event 'eForkBusy with payload (<fork:Fork(5), philo_id:0, >)' in state 'thinking'.
-<PrintLog> P0 fork busy, retrying...
-<PrintLog> P0 took left fork
+<DequeueLog> 'Fork(5)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'taken'.
 <SendLog> 'Philosopher(8)' in state 'eating' sent event 'eReleaseFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' to 'Fork(5)'.
 <MonitorLog> DeadlockDetection is processing event 'eReleaseFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'Monitoring'.
-<DequeueLog> 'Philosopher(11)' dequeued event 'eForkBusy with payload (<fork:Fork(6), philo_id:4, >)' in state 'thinking'.
+<DequeueLog> 'Fork(6)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'taken'.
+<SendLog> 'Fork(6)' in state 'taken' sent event 'eForkBusy with payload (<fork:Philosopher(11), philo_id:4, >)' to 'Philosopher(11)'.
+<DequeueLog> 'Philosopher(11)' dequeued event 'eForkBusy with payload (<fork:Philosopher(11), philo_id:4, >)' in state 'thinking'.
 <PrintLog> P4 fork busy, retrying...
 <PrintLog> P4 took right fork
-<SendLog> 'Philosopher(7)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(5)'.
+<SendLog> 'Philosopher(11)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' to 'Fork(6)'.
+<SendLog> 'Philosopher(8)' in state 'eating' sent event 'eReleaseFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' to 'Fork(4)'.
+<PrintLog> P1 Done Eating
+<GotoLog> Philosopher(8) is transitioning from state 'eating' to state 'PImplementation.Philosopher.done'.
+<StateLog> Philosopher(8) exits state 'eating'.
+<StateLog> Philosopher(8) enters state 'done'.
+<PrintLog> P1 killed
+<DequeueLog> 'Fork(4)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'taken'.
+<SendLog> 'Fork(5)' in state 'taken' sent event 'eForkBusy with payload (<fork:Philosopher(7), philo_id:0, >)' to 'Philosopher(7)'.
 <DequeueLog> 'Fork(5)' dequeued event 'eReleaseFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'taken'.
 <GotoLog> Fork(5) is transitioning from state 'taken' to state 'PImplementation.Fork.available'.
 <StateLog> Fork(5) exits state 'taken'.
 <StateLog> Fork(5) enters state 'available'.
+<SendLog> 'Fork(4)' in state 'taken' sent event 'eForkBusy with payload (<fork:Philosopher(9), philo_id:2, >)' to 'Philosopher(9)'.
+<DequeueLog> 'Fork(6)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'taken'.
+<DequeueLog> 'Fork(4)' dequeued event 'eReleaseFork with payload (<philosopher:Philosopher(8), philo_id:1, >)' in state 'taken'.
+<GotoLog> Fork(4) is transitioning from state 'taken' to state 'PImplementation.Fork.available'.
+<StateLog> Fork(4) exits state 'taken'.
+<StateLog> Fork(4) enters state 'available'.
+<SendLog> 'Philosopher(10)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' to 'Fork(2)'.
+<SendLog> 'Fork(6)' in state 'taken' sent event 'eForkBusy with payload (<fork:Philosopher(11), philo_id:4, >)' to 'Philosopher(11)'.
+<DequeueLog> 'Philosopher(9)' dequeued event 'eForkBusy with payload (<fork:Philosopher(9), philo_id:2, >)' in state 'thinking'.
+<PrintLog> P2 fork busy, retrying...
+<PrintLog> P2 took left fork
+<DequeueLog> 'Philosopher(7)' dequeued event 'eForkBusy with payload (<fork:Philosopher(7), philo_id:0, >)' in state 'thinking'.
+<PrintLog> P0 fork busy, retrying...
+<PrintLog> P0 took left fork
+<DequeueLog> 'Philosopher(11)' dequeued event 'eForkBusy with payload (<fork:Philosopher(11), philo_id:4, >)' in state 'thinking'.
+<PrintLog> P4 fork busy, retrying...
+<PrintLog> P4 took right fork
 <DequeueLog> 'Fork(2)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'available'.
-<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Fork(2), philo_id:3, >)' in state 'Monitoring'.
-<PrintLog> philosophers: (<Fork(5)>, <Fork(6)>, <Fork(4)>, <Fork(3)>, <Fork(2)>)
+<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'Monitoring'.
+<PrintLog> philosophers: (<Philosopher(7)>, <Philosopher(10)>)
 <PrintLog> Philosopher 3 acquired fork
-<PrintLog> size: 5
-<ErrorLog> Assertion Failed: PSpec/Specification.p:15:13 Hard deadlock: All philosophers holding forks
+<PrintLog> size: 2
+<SendLog> 'Fork(2)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Philosopher(10), philo_id:3, >)' to 'Philosopher(10)'.
+<GotoLog> Fork(2) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
+<StateLog> Fork(2) exits state 'available'.
+<StateLog> Fork(2) enters state 'taken'.
+<SendLog> 'Philosopher(9)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' to 'Fork(4)'.
+<DequeueLog> 'Philosopher(10)' dequeued event 'eForkAcquired with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'thinking'.
+<PrintLog> P3 took both forks
+<GotoLog> Philosopher(10) is transitioning from state 'thinking' to state 'PImplementation.Philosopher.eating'.
+<StateLog> Philosopher(10) exits state 'thinking'.
+<StateLog> Philosopher(10) enters state 'eating'.
+<PrintLog> P3 Eating
+<MonitorLog> DeadlockDetection is processing event 'eReleaseFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'Monitoring'.
+<SendLog> 'Philosopher(7)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(5)'.
+<DequeueLog> 'Fork(4)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'available'.
+<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'Monitoring'.
+<PrintLog> philosophers: (<Philosopher(7)>, <Philosopher(9)>)
+<PrintLog> Philosopher 2 acquired fork
+<PrintLog> size: 2
+<SendLog> 'Philosopher(11)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' to 'Fork(6)'.
+<SendLog> 'Fork(4)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Philosopher(9), philo_id:2, >)' to 'Philosopher(9)'.
+<GotoLog> Fork(4) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
+<StateLog> Fork(4) exits state 'available'.
+<StateLog> Fork(4) enters state 'taken'.
+<DequeueLog> 'Philosopher(9)' dequeued event 'eForkAcquired with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'thinking'.
+<PrintLog> P2 took left fork
+<SendLog> 'Philosopher(9)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' to 'Fork(3)'.
+<DequeueLog> 'Fork(6)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'taken'.
+<DequeueLog> 'Fork(5)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'available'.
+<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'Monitoring'.
+<PrintLog> philosophers: (<Philosopher(7)>, <Philosopher(9)>)
+<PrintLog> Philosopher 0 acquired fork
+<PrintLog> size: 2
+<SendLog> 'Fork(6)' in state 'taken' sent event 'eForkBusy with payload (<fork:Philosopher(11), philo_id:4, >)' to 'Philosopher(11)'.
+<SendLog> 'Fork(5)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Philosopher(7)'.
+<GotoLog> Fork(5) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
+<StateLog> Fork(5) exits state 'available'.
+<StateLog> Fork(5) enters state 'taken'.
+<DequeueLog> 'Fork(3)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'taken'.
+<DequeueLog> 'Philosopher(7)' dequeued event 'eForkAcquired with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'thinking'.
+<PrintLog> P0 took both forks
+<GotoLog> Philosopher(7) is transitioning from state 'thinking' to state 'PImplementation.Philosopher.eating'.
+<StateLog> Philosopher(7) exits state 'thinking'.
+<StateLog> Philosopher(7) enters state 'eating'.
+<PrintLog> P0 Eating
+<MonitorLog> DeadlockDetection is processing event 'eReleaseFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'Monitoring'.
+<SendLog> 'Philosopher(7)' in state 'eating' sent event 'eReleaseFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(6)'.
+<MonitorLog> DeadlockDetection is processing event 'eReleaseFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'Monitoring'.
+<DequeueLog> 'Philosopher(11)' dequeued event 'eForkBusy with payload (<fork:Philosopher(11), philo_id:4, >)' in state 'thinking'.
+<PrintLog> P4 fork busy, retrying...
+<PrintLog> P4 took right fork
+<SendLog> 'Fork(3)' in state 'taken' sent event 'eForkBusy with payload (<fork:Philosopher(9), philo_id:2, >)' to 'Philosopher(9)'.
+<SendLog> 'Philosopher(7)' in state 'eating' sent event 'eReleaseFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' to 'Fork(5)'.
+<PrintLog> P0 Done Eating
+<GotoLog> Philosopher(7) is transitioning from state 'eating' to state 'PImplementation.Philosopher.done'.
+<StateLog> Philosopher(7) exits state 'eating'.
+<StateLog> Philosopher(7) enters state 'done'.
+<PrintLog> P0 killed
+<DequeueLog> 'Philosopher(9)' dequeued event 'eForkBusy with payload (<fork:Philosopher(9), philo_id:2, >)' in state 'thinking'.
+<PrintLog> P2 fork busy, retrying...
+<PrintLog> P2 took left fork
+<DequeueLog> 'Fork(6)' dequeued event 'eReleaseFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'taken'.
+<GotoLog> Fork(6) is transitioning from state 'taken' to state 'PImplementation.Fork.available'.
+<StateLog> Fork(6) exits state 'taken'.
+<StateLog> Fork(6) enters state 'available'.
+<SendLog> 'Philosopher(10)' in state 'eating' sent event 'eReleaseFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' to 'Fork(3)'.
+<MonitorLog> DeadlockDetection is processing event 'eReleaseFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'Monitoring'.
+<DequeueLog> 'Fork(5)' dequeued event 'eReleaseFork with payload (<philosopher:Philosopher(7), philo_id:0, >)' in state 'taken'.
+<GotoLog> Fork(5) is transitioning from state 'taken' to state 'PImplementation.Fork.available'.
+<StateLog> Fork(5) exits state 'taken'.
+<StateLog> Fork(5) enters state 'available'.
+<SendLog> 'Philosopher(11)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' to 'Fork(6)'.
+<SendLog> 'Philosopher(9)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' to 'Fork(3)'.
+<DequeueLog> 'Fork(6)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'available'.
+<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'Monitoring'.
+<PrintLog> philosophers: (<Philosopher(11)>, <Philosopher(9)>)
+<PrintLog> Philosopher 4 acquired fork
+<PrintLog> size: 2
+<DequeueLog> 'Fork(3)' dequeued event 'eReleaseFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'taken'.
+<GotoLog> Fork(3) is transitioning from state 'taken' to state 'PImplementation.Fork.available'.
+<StateLog> Fork(3) exits state 'taken'.
+<StateLog> Fork(3) enters state 'available'.
+<SendLog> 'Philosopher(10)' in state 'eating' sent event 'eReleaseFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' to 'Fork(2)'.
+<PrintLog> P3 Done Eating
+<GotoLog> Philosopher(10) is transitioning from state 'eating' to state 'PImplementation.Philosopher.done'.
+<StateLog> Philosopher(10) exits state 'eating'.
+<StateLog> Philosopher(10) enters state 'done'.
+<PrintLog> P3 killed
+<DequeueLog> 'Fork(2)' dequeued event 'eReleaseFork with payload (<philosopher:Philosopher(10), philo_id:3, >)' in state 'taken'.
+<GotoLog> Fork(2) is transitioning from state 'taken' to state 'PImplementation.Fork.available'.
+<StateLog> Fork(2) exits state 'taken'.
+<StateLog> Fork(2) enters state 'available'.
+<SendLog> 'Fork(6)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Philosopher(11), philo_id:4, >)' to 'Philosopher(11)'.
+<GotoLog> Fork(6) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
+<StateLog> Fork(6) exits state 'available'.
+<StateLog> Fork(6) enters state 'taken'.
+<DequeueLog> 'Fork(3)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'available'.
+<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Philosopher(9), philo_id:2, >)' in state 'Monitoring'.
+<PrintLog> philosophers: (<Philosopher(11)>, <Philosopher(9)>)
+<PrintLog> Philosopher 2 acquired fork
+<PrintLog> size: 2
+<DequeueLog> 'Philosopher(11)' dequeued event 'eForkAcquired with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'thinking'.
+<PrintLog> P4 took right fork
+<SendLog> 'Fork(3)' in state 'available' sent event 'eForkAcquired with payload (<philosopher:Philosopher(9), philo_id:2, >)' to 'Philosopher(9)'.
+<GotoLog> Fork(3) is transitioning from state 'available' to state 'PImplementation.Fork.taken'.
+<StateLog> Fork(3) exits state 'available'.
+<StateLog> Fork(3) enters state 'taken'.
+<SendLog> 'Philosopher(11)' in state 'thinking' sent event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' to 'Fork(2)'.
+<DequeueLog> 'Fork(2)' dequeued event 'eAcquireFork with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'available'.
+<MonitorLog> DeadlockDetection is processing event 'eForkAcquired with payload (<philosopher:Philosopher(11), philo_id:4, >)' in state 'Monitoring'.
+<PrintLog> philosophers: (<Philosopher(11)>, <Philosopher(9)>)
+<PrintLog> Philosopher 4 acquired fork
+<PrintLog> size: 2
+<ErrorLog> Assertion Failed: PSpec/Specification.p:18:13 Soft deadlock: All philosophers released forks
 <StrategyLog> Found bug using 'random' strategy.
 <StrategyLog> Checking statistics:
 <StrategyLog> Found 1 bug.
@@ -246,4 +262,4 @@
 <StrategyLog> Explored 1 schedule
 <StrategyLog> Explored 1 timeline
 <StrategyLog> Found 100.00% buggy schedules.
-<StrategyLog> Number of scheduling points in terminating schedules: 111 (min), 111 (avg), 111 (max).
+<StrategyLog> Number of scheduling points in terminating schedules: 95 (min), 95 (avg), 95 (max).

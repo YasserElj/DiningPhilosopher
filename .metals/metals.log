@@ -27,3 +27,8 @@
 2025.05.30 21:33:16 INFO  Shutting down server[0m
 2025.05.30 21:33:16 INFO  shutting down Metals[0m
 2025.05.30 21:33:16 INFO  Exiting server[0m
+2025.06.04 15:08:54 INFO  Started: Metals version 1.5.3 in folders '/home/yasser/code/cloudCourse' for client Cursor 1.96.2.[0m
+2025.06.04 15:09:16 INFO  no build target found for /home/yasser/code/cloudCourse/DiningPhilosophersLocal/src/main/scala/com/example/diningphilosophers/DiningPhilosophersApp.scala. Using presentation compiler with project's scala-library version: 3.3.6[0m
+2025.06.04 15:09:37 INFO  no build target found for /home/yasser/code/cloudCourse/DiningPhilosophersLocal/src/main/scala/com/example/diningphilosophers/Messages.scala. Using presentation compiler with project's scala-library version: 3.3.6[0m
+2025.06.04 15:09:55 INFO  no build target found for /home/yasser/code/cloudCourse/DiningPhilosophersLocal/src/main/scala/com/example/diningphilosophers/Fork.scala. Using presentation compiler with project's scala-library version: 3.3.6[0m
+2025.06.04 15:09:59 INFO  no build target found for /home/yasser/code/cloudCourse/DiningPhilosophersLocal/src/main/scala/com/example/diningphilosophers/Philosopher.scala. Using presentation compiler with project's scala-library version: 3.3.6[0m
