@@ -72,7 +72,7 @@ machine Philosopher {
 
 2. **Verify Deadlock-Prone Solution (Simulation1):**
    ```bash
-   p check -tc tcDeadlock
+   p check -tc tcDeadlock -ms 1000 -s 5
    ```
    This will:
    - Run the deadlock detection specification
@@ -81,7 +81,7 @@ machine Philosopher {
 
 3. **Verify Deadlock-Free Solution (Simulation2):**
    ```bash
-   p check -tc tcNoDeadlock
+   p check -tc tcNoDeadlock -ms 1000 -s 5
    ```
    This will:
    - Run the same specification
