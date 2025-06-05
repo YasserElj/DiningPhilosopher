@@ -155,6 +155,8 @@ When running `p check -tc tcNoDeadlock -ms 1000 -s 5`:
 ## Specification Implementation
 
 The deadlock detection specification (`PSpec/Specification.p`) monitors the system:
+So here the idea was to make a set of philosophers, and every time a philosopher takes a fork we add it to the set and when they drop the forks we remove them from the set.
+Now to have no deadlock, the set should always have less philosophers than the total number of philosophers. If size of the set is equal to the number of philosophers we assert a bug.
 
 ```p
 spec DeadlockDetection observes eForkAcquired, eReleaseFork {
